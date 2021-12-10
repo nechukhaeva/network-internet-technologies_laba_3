@@ -91,6 +91,10 @@ router.get("/health", (req, res) => {
     res.status(200).send({APP_ENV: app_env});
 });
 
+router.get("/deploy", (req, res) => {
+    res.status(200).send({message: `Successful ${process.env.APP_ENV} deploy!`});
+});
+
 app.use(router);
 
 let port = process.env.PORT;
