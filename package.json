@@ -11,15 +11,10 @@
   },
   "devDependencies": {
     "eslint": "^8.2.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "nodemon": "^2.0.4"
   },
   "scripts": {
     "start": "nodemon server"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "jshint server.js"
-    }
   }
 }
