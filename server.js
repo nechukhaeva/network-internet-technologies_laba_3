@@ -1,7 +1,8 @@
 const express = require("express");
+require('dotenv').config({path: __dirname + `/${process.env.APP_ENV}.env`});
 const DB = require("./db");
 
-const db = new DB("files.sqlite");
+const db = new DB(process.env.DB_NAME);
 const app = express();
 const router = express.Router();
 const fs = require("fs");
@@ -84,9 +85,14 @@ router.delete("/file", (req, res) => {
     }
 });
 
+router.get("/health", (req, res) => {
+    console.log("get health", process.env.APP_ENV);
+    res.status(200).send({APP_ENV: process.env.APP_ENV});
+});
+
 app.use(router);
 
-let port = 3000;
+let port = process.env.PORT;
 
 app.listen(port, function () {
     console.log("start api", "listening port: " + port);
