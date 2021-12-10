@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const reg = /\[[0-9]{1,}\]\s*.+/g
+
+checkCommitMessage();
+
+async function checkCommitMessage(){
+    const message = fs.readFileSync(process.argv[2], 'utf8').trim();
+    if(!reg.test(message)) {
+        console.log("Не верный формат commit. Пример: [1] Небольшое изменение")
+        process.exit(1);
+    } else {
+        process.exit(0);
+    }
+}
