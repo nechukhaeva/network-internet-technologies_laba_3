@@ -1,4 +1,5 @@
 const express = require("express");
+const app_env = process.env.APP_ENV == "dev" ? "development" : "production"
 require('dotenv').config({path: __dirname + `/${process.env.APP_ENV}.env`});
 const DB = require("./db");
 
@@ -87,7 +88,7 @@ router.delete("/file", (req, res) => {
 
 router.get("/health", (req, res) => {
     console.log("get health", process.env.APP_ENV);
-    res.status(200).send({APP_ENV: process.env.APP_ENV});
+    res.status(200).send({APP_ENV: app_env});
 });
 
 app.use(router);
