@@ -2,8 +2,8 @@
  
 ## Лабораторная 6
 
-###prod:
+### prod:
 ![](https://github.com/nechukhaeva/network-internet-technologies_laba_3/blob/main/test_6_laba/prod.png?raw=true)
 
-###dev:
+### dev:
 ![](https://github.com/nechukhaeva/network-internet-technologies_laba_3/blob/main/test_6_laba/dev.png?raw=true)
