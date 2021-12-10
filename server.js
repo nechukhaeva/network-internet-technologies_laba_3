@@ -12,7 +12,8 @@ const multer = require("multer");
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-let dir = "./upload";
+let dir = "./upload"
+
 if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
     console.log("create dir", dir);
